@@ -185,4 +185,4 @@ For contributions, questions or collaboration:
 
 ---
 
-> ✨ This project showcases how AI can revolutionize energy and task management in modern data centers.
+> ✨ This project is a case study given by TKS
