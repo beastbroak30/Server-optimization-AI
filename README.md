@@ -155,7 +155,7 @@ All outputs use a 0.5 threshold for binary decisions:
 
 ---
 
-## 📂 Folder Structure (Example)
+## 📂 Folder Structure 
 
 ```
 /
@@ -163,10 +163,12 @@ All outputs use a 0.5 threshold for binary decisions:
 │   ├── data_center_dataset_1200.csv
 |   ├── trained_datacenter_model_scalers.pkl
 │   └── trained_datacenter_model.h5
+|
 ├── datasets+generator/
 │   ├── data_center_dataset_10000.csv
 |   ├── data_center_dataset_200000.csv
 │   └── dataset_maker.py
+|
 ├── images_of_tests/
 |   
 └── README.md
