@@ -67,36 +67,91 @@ To train the model effectively, we generated a dataset combining real-world-insp
 - Occupancy simulation
 - Time-based patterns (weekdays vs weekends, peak hours)
 - AI usage simulation (e.g., workload surges during training jobs)
+---
+## Model Overview
+The DataCenterModel is a multi-output neural network designed for optimizing data center operations using deep learning. It utilizes TensorFlow/Keras to make multiple simultaneous predictions for various aspects of data center management.
 
-### Example Dataset Generation Code (Python)
-```python
-import pandas as pd
-import numpy as np
-from datetime import datetime, timedelta
+## Model Architecture
+- **Type**: Multi-output Neural Network
+- **Framework**: TensorFlow/Keras
+- **Architecture Type**: Feed-forward Neural Network with branching outputs
 
-rows = []
-start_time = datetime(2025, 1, 1, 0, 0)
+### Layer Structure
+1. **Input Layer**
+   - Dimensions: (None, 12) - 12 input features
+   
+2. **Shared Layers**
+   - Dense Layer 1: 256 neurons, ReLU activation
+   - Batch Normalization
+   - Dropout (0.2)
+   - Dense Layer 2: 128 neurons, ReLU activation
+   - Batch Normalization
+   - Dropout (0.2)
 
-for i in range(10000):
-    current_time = start_time + timedelta(minutes=15*i)
-    row = {
-        "CPU_Usage": np.random.uniform(20, 95),
-        "Internal_Temp": np.random.uniform(25, 35),
-        "External_Temp": np.random.uniform(20, 40),
-        "External_Humidity": np.random.uniform(30, 80),
-        "Power_Draw": np.random.uniform(80, 150),
-        "Solar_Wind": np.random.uniform(0, 100),
-        "Grid_Price": np.random.uniform(0.1, 0.3),
-        "Occupancy": np.random.randint(0, 50),
-        "Day": current_time.strftime("%A"),
-        "Hour": current_time.hour,
-        "Active_Users": np.random.randint(1000, 5000),
-        "AI_Task_Load": np.random.choice(["Yes", "No"])
-    }
-    rows.append(row)
+3. **Output Branches** (6 parallel branches)
+   Each branch contains:
+   - Dense Layer: 64 neurons, ReLU activation
+   - Dense Layer: 32 neurons, ReLU activation
+   - Output Layer: 1 neuron (linear activation)
 
-pd.DataFrame(rows).to_csv("dataset.csv", index=False)
-```
+## Training Parameters
+- **Optimizer**: Adam
+- **Learning Rate**: 0.001
+- **Loss Function**: Mean Squared Error (MSE)
+- **Metrics**: Mean Absolute Error (MAE)
+- **Batch Size**: 32
+- **Epochs**: 100
+- **Validation Split**: 20%
+- **Early Stopping**: Yes (patience=10)
+
+## Data Preprocessing
+- Feature scaling using StandardScaler
+- Label encoding for categorical 'Day' feature
+- Target variable scaling using StandardScaler
+
+## Model Features
+1. **Continued Training Support**
+   - Option to continue training from previous state
+   - Model checkpointing capability
+
+2. **Serialization**
+   - Model saving/loading functionality
+   - Scaler persistence for consistent predictions
+
+3. **Custom Loss Functions**
+   - custom_mse: Custom Mean Squared Error
+   - custom_mae: Custom Mean Absolute Error
+
+## Usage Guidelines
+1. **Initialization**
+   ```python
+   model = DataCenterModel(load_previous=False)
+   ```
+
+2. **Training**
+   ```python
+   history = model.train(data_path='data_center_dataset.csv', 
+                        epochs=100, 
+                        batch_size=32)
+   ```
+
+3. **Prediction**
+   ```python
+   predictions = model.predict(input_data)
+   model.interpret_predictions(predictions)
+   ```
+
+## Decision Thresholds
+All outputs use a 0.5 threshold for binary decisions:
+- Values > 0.5: Positive action recommended
+- Values ≤ 0.5: No action needed
+
+## Performance Considerations
+- Uses batch normalization for training stability
+- Implements dropout (0.2) for regularization
+- Early stopping to prevent overfitting
+- Scalable architecture for varying data sizes
+
 
 ---
 
@@ -126,7 +181,7 @@ pd.DataFrame(rows).to_csv("dataset.csv", index=False)
 
 For contributions, questions or collaboration:  
 **Antarip Kar**  
-📧 antarip.dev@example.com *(Replace with actual)*
+📧 akantarip30@gmail.com
 
 ---
 
