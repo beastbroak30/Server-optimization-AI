@@ -50,9 +50,9 @@ The model was trained on simulated and real-world-style datasets, taking into ac
 
 ## 🧪 Model Training
 
-- **Training Environment**: Google Colab  
+- **Training Environment**: Google Colab  / Local
 - **Language**: Python  
-- **Libraries Used**: Scikit-learn, Pandas, Numpy, Matplotlib, Seaborn  
+- **Libraries Used**: Scikit-learn,Tensorflow, Pandas, Numpy, Matplotlib, Seaborn  
 - **Model Type**: Multi-output Decision/Regression Model (e.g., Random Forest or Neural Network)  
 - **Learning Strategy**: Continual learning support with incremental updates
 
