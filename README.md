@@ -164,16 +164,15 @@ All outputs use a 0.5 threshold for binary decisions:
 |   ├── trained_datacenter_model_scalers.pkl
 │   └── trained_datacenter_model.h5
 |
-├── codes/
-│   ├── enhanced_model.py
-|   ├── model_evalution.py
-│   └── dataset_maker.py
+├── enhanced_model.py
+├── model_evalution.py
+└── dataset_maker.py
 |
 ├── datasets/
 │   ├── data_center_dataset_10000.csv
 |   ├── data_center_dataset_200000.csv
 |
-├── images_of_tests/
+├── images/
 |   
 └── README.md
 ```
