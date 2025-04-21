@@ -3,7 +3,7 @@ import numpy as np
 from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 
-# Number of hours for the dataset (editable variable)
+# Number of hours for the dataset 
 NUM_HOURS = 500000
 
 # Function to generate a synthetic dataset
