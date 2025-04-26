@@ -1,6 +1,6 @@
 # AI-Powered Server Efficiency Optimization
 
-This project presents a **Python-based AI model** designed to enhance **server efficiency** for Microsoft data centers. The model is trained using **Google Colab** and considers various real-time environmental, operational, and human activity factors to make smart, energy-efficient decisions.
+This project presents a **Python-based AI model** designed to enhance **server efficiency** for Microsoft data centers. The model is trained using cpu-only and considers various real-time environmental, operational, and human activity factors to make smart, energy-efficient decisions.
 
 ---
 
