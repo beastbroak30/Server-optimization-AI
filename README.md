@@ -4,7 +4,7 @@ This project presents a **Python-based AI model** designed to enhance **server e
 
 ---
 
-## 🧠 AI Case Study Overview
+##  AI Case Study Overview
 
 In large data centers, energy consumption and cooling costs are critical factors. We built an AI model that:
 
@@ -17,7 +17,7 @@ The model was trained on simulated and real-world-style datasets, taking into ac
 
 ---
 
-## 📥 Input Features (Used for AI Training)
+##  Input Features (Used for AI Training)
 
 | Category           | Input Feature         | Description                                | Example Value       |
 |-------------------|------------------------|--------------------------------------------|---------------------|
@@ -48,7 +48,7 @@ The model was trained on simulated and real-world-style datasets, taking into ac
 
 ---
 
-## 🧪 Model Training
+##  Model Training
 
 - **Training Environment**: Google Colab  / Local
 - **Language**: Python  
@@ -58,7 +58,7 @@ The model was trained on simulated and real-world-style datasets, taking into ac
 
 ---
 
-## 📊 Dataset Creation
+##  Dataset Creation
 
 To train the model effectively, we generated a dataset combining real-world-inspired synthetic values, including:
 
@@ -179,7 +179,7 @@ All outputs use a 0.5 threshold for binary decisions:
 
 ---
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 - Predictive maintenance module
 - Integration with computer vision for occupancy estimation
@@ -188,7 +188,7 @@ All outputs use a 0.5 threshold for binary decisions:
 
 ---
 
-## 📧 Contact
+##  Contact
 
 For contributions, questions or collaboration:  
 **Antarip Kar**  
@@ -196,4 +196,4 @@ For contributions, questions or collaboration:
 
 ---
 
-> ✨ This project is a case study given by TKS
+> ✨ This project is a case study given by TKS (Got the merit of $3000)
